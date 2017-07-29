@@ -1,0 +1,47 @@
+#front-content {
+	
+}
+
+
+#front-content p {
+	margin-bottom: 20px;
+	text-align: justify;
+	line-height: 30px;
+}
+
+.front-heading {
+	font-size: 5em;
+	line-height: 60px;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-image: linear-gradient(to right, #1eddff, #ad1eff 50%, #1e8fff);
+  	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	padding-bottom: 40px;
+
+}
+
+.sub-heading {
+	font-size: 0.5em;
+	font-weight: 100;
+}
+
+.front-intro {
+	font-size: 1.3em;
+	color:#9b9b9b;
+	padding-bottom: 40px;
+	text-align:center;
+}
+
+.front-box {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 20px;
+	width: 33.333333%;
+}
+
+pre.comment {
+	color:#ddd;
+}
