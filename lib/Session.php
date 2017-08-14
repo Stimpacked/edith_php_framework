@@ -8,8 +8,13 @@
 class Session
 {
 
+	/**
+     * Start the session
+     *
+     */
 	public static function init()
 	{
+		// No session? Start one
 		if(session_status() == PHP_SESSION_NONE)
 		{
 			session_start();

@@ -3,8 +3,9 @@
  * View for index
  * 
  */
+$topicsPagination = $this->pagTopics;
 
-	$create = "<a href='topics/create' class='topic-btn'>New Topic</a>";
+$create = "<a href='topics/create' class='topic-btn'>New Topic</a>";
 
 $topicList = "
 <tr>
@@ -37,6 +38,9 @@ $edith['main'] = <<<EOD
 	<table>
 		{$topicList}
 	</table>
+	<div id='pagination'>
+		{$topicsPagination}
+	</div>
 </div>
 EOD;
 ?>

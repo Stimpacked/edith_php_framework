@@ -23,6 +23,7 @@ class Controller
 	{
 		$path = 'models/' . $name . '_model.php';
 
+		// If a model exists, get it
 		if(file_exists($path))
 		{
 			require_once('models/' . $name . '_model.php');

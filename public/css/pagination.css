@@ -1,0 +1,19 @@
+#pagination {
+	height: 60px;
+	line-height: 60px;
+}
+
+#pagination a {
+	padding: 5px;
+	border: 1px solid #e2e5e9;
+	margin-right: 10px;
+	color: #9b9b9b;
+}
+
+#pagination span {
+	padding: 5px;
+	border: 1px solid #69b5ff;
+	background-color: #69b5ff;
+    color: #fff;
+	margin-right: 10px;
+}

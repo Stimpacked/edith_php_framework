@@ -11,10 +11,12 @@ class Path
 	public function __construct(){	
 	}
 
+	/**
+     * Get all files in the dedicated css-folder
+     *
+     */
 	public function stylesheets()
 	{
-
-
 		$dir = 'public/css';
 
 		$files = scandir($dir);

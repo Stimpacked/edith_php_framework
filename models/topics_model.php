@@ -13,20 +13,37 @@ class Topics_Model extends Model
 		parent::__construct();
 	}	
 
+	public function countAllTopics() 
+	{
+		$stmt = $this->db->query("SELECT * FROM `topics`");
+		$result = $this->db->resultSet();
+		$result = count($result);
+		return $result;
+	}
 	/**
      * Select all topics in db
      *
-	 * @param string | optional category id
+	 * @param $catId, string | optional category id
+	 * @param $page, string | optional page number
+	 *
      * @return array | SQL result
      */
-	public function getTopics($catId = null)
+	public function getTopics($catId = null, $page = null)
 	{
 		$param = "";
+		$offset = 0;
+		if(!$page == null) {
+			$offset = ($page-1) * 20;
+		}
+		$limit = 20;
+
+		
 		if($catId != null) {
 			$param = "WHERE `topic_cat` = {$catId}";
 		}
-		$sql = $this->db->query("SELECT * FROM `topics` {$param} ORDER BY `topic_date` DESC");
-		//$sql = "SELECT * FROM `topics`";
+
+		$this->db->query("SELECT * FROM `topics` {$param} ORDER BY `topic_date` DESC LIMIT 20 OFFSET {$offset}");
+		$this->db->bind(':offset', $offset);
 		$result = $this->db->resultset();
 
 		$count = count($result);

@@ -14,7 +14,7 @@
 		$user = "<a href='{$path}dashboard'>Dashboard</a> <a href='{$path}dashboard/logout'>Logout</a>";
 		if(Session::get('role') == "admin")
 		{
-			$user = "<a href='{$path}dashboard'>Dashboard</a> <a href='{$path}user'>Users</a> <a href='{$path}dashboard/logout' class='nav-btn'>Logout</a>";
+			$user = "<a href='{$path}dashboard'>Dashboard</a> <a href='{$path}user'>Users</a> <a href='{$path}dashboard/logout'>Logout</a>";
 		}
 	}
 	else

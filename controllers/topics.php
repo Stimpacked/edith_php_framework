@@ -13,12 +13,31 @@ class Topics extends Controller
 		parent::__construct();
 	}
 
-	public function index($cat = null) 
+	/**
+     * Get all topics
+     *
+     * @param $cat
+     * @param $pages
+     */
+	public function index($cat = null, $pages = null) 
 	{
-		$this->view->topics = $this->model->getTopics($cat);
+		$this->pagination = new Pagination();
+
+		if(isset($_GET['page'])) {
+			$pages = $_GET['page'];
+		}
+		$this->view->topics = $this->model->getTopics($cat, $pages);
+		$count = $this->model->countAllTopics();
+		$this->view->pagTopics = $this->pagination->generatePagination($count, 20); // Params = rows & rowsperpage
+
 		$this->view->render('topics/index');	
 	}
 
+
+	/**
+     * Get a specific topic
+     *
+     */
 	public function topic($id)
 	{
 		$this->view->topic = $this->model->getTopic($id);
@@ -27,6 +46,11 @@ class Topics extends Controller
 		$this->view->render('topics/topic');
 	}
 
+
+	/**
+     * Create a new topic
+     *
+     */
 	public function create()
 	{
 		$logged = Session::get('loggedIn');

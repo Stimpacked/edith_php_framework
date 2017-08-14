@@ -13,7 +13,7 @@ class User extends Controller
 		parent::__construct();						// Initiate the session
 		$logged = Session::get('loggedIn');
 		$role = Session::get('role');
-		if($logged == false || $role != 'admin')					// Not logged in?
+		if($logged == false || $role != 'admin')	// Not logged in?
 		{
 			Session::destroy();
 			if(isset($_GET['url'][1]))

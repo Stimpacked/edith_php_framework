@@ -15,10 +15,13 @@ class Login extends Controller
 
 	public function index() 
 	{
-		$this->view->render('login/index');
-		
+		$this->view->render('login/index');	
 	}
 
+	/**
+     * Authenticate login
+     *
+     */
 	public function authenticate()
 	{
 		$username = $_POST['username'];

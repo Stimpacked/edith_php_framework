@@ -11,7 +11,7 @@ class Bootstrap {
     /**
  	 * Class constructor
  	 *
- 	 * Calls the proper controller  for each page based on the URL
+ 	 * Calls the proper controller for each page based on the URL
  	 * 
  	 * @return void
  	 *
@@ -77,7 +77,10 @@ class Bootstrap {
 		}
 	}
 
-
+	/**
+     * Error-handler
+     *
+     */
 	function error() 
 	{
 		require_once('controllers/error.php');
